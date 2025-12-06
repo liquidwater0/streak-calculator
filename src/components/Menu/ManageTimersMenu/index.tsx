@@ -60,7 +60,7 @@ function TimerInputFields({ timerData }: TimerInputFieldsProps) {
     }
 
     const finishEditing = () => {
-        if (!data.utcOffset) return;
+        if (!data.utcOffset && data.utcOffset !== 0) return;
         
         setIsEditing(false);
         editTimer(data.id, data);
@@ -78,7 +78,7 @@ function TimerInputFields({ timerData }: TimerInputFieldsProps) {
                     type="number"
                     className="utc-input"
                     readOnly={!isEditing}
-                    defaultValue={data.utcOffset}
+                    defaultValue={!isNaN(data.utcOffset) ? data.utcOffset : ""}
                     placeholder="UTC"
                     onChange={event => setData(prevData => ({ ...prevData, utcOffset: event.target.valueAsNumber }))}
                 />

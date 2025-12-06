@@ -305,17 +305,15 @@ function App() {
 			</main>
 
 			<footer className="footer">
-				{timers.map(({ id, utcOffset, label }) => (
-					<Activity 
-						mode={showTimers ? "visible" : "hidden"}
-						key={id}
-					>
+				<Activity mode={showTimers ? "visible" : "hidden"}>
+					{timers.map(({ id, utcOffset, label }) => (
 						<Timer 
+							key={id}
 							utcOffset={utcOffset}
 							label={label}
 						/>
-					</Activity>
-				))}
+					))}
+				</Activity>
 			</footer>
 		</>
 	);
