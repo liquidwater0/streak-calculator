@@ -39,7 +39,7 @@ function App() {
 		document.documentElement.dataset.theme = theme;
 	}, [theme]);
 
-	function calculate() {
+	const calculate = () => {
 		const currentStreakInputed = currentStreak !== null && currentStreak !== undefined && !isNaN(currentStreak);
 		const desiredStreakInputed = desiredStreak !== null && desiredStreak !== undefined && !isNaN(desiredStreak);
 
@@ -60,20 +60,10 @@ function App() {
 			setStartedOn(`${MONTHS[startMonth]} ${startDay}, ${Math.abs(startYear)} ${startYear < 0 ? "BC" : ""}`);
 		}
 
-		if (mode === "date" && anyDateModeValueEmpty) {
-			setStartedOn("");
-			setExpectedOn("");
-		}
-
-		if (mode === "streak" && anyStreakModeValueEmpty) {
-			setStartedOn("");
-			setExpectedStreak(undefined);
-		}
-
 		if (mode === "date" && !anyDateModeValueEmpty) {
 			calculateStartedDate();
 
-			const expectedDate = addDays(now, (desiredStreak! - currentStreak!) - (hasClaimedStreakToday ? 0 : 1));
+			const expectedDate = addDays(now, (desiredStreak - currentStreak) - (hasClaimedStreakToday ? 0 : 1));
 			const expectedMonth = expectedDate.getMonth();
 			const expectedDay = expectedDate.getDate();
 			const expectedYear = expectedDate.getFullYear();
