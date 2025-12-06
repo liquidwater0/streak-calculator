@@ -2,7 +2,7 @@ import "./_index.scss";
 import type { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	buttonStyle: "primary" | "secondary" | "floating",
+	buttonStyle: "primary" | "secondary" | "success" | "danger" | "floating",
 	icon?: boolean
 }
 

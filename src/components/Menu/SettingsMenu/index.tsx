@@ -2,14 +2,14 @@ import "./_index.scss";
 import Menu from "..";
 import { useMenus } from "../../../store/menuStore";
 import { useSettings } from "../../../store/settingsStore";
-// import Button from "../../Button";
+import Button from "../../Button";
 import ButtonToggle from "../../ButtonToggle";
 import Checkbox from "../../Checkbox";
 import { DarkMode, LightMode } from "@mui/icons-material";
 
 export default function SettingsMenu() {
     const isOpen = useMenus(state => state.settings);
-    // const openMenu = useMenus(state => state.openMenu);
+    const openMenu = useMenus(state => state.openMenu);
 
     const theme = useSettings(state => state.theme);
     const showTimers = useSettings(state => state.showTimers);
@@ -47,8 +47,7 @@ export default function SettingsMenu() {
 
             <div className="menu-item">
                 <label htmlFor="showTimersCheckbox" style={{ cursor: "pointer" }}>
-                    {/* Show Timers */}
-                    Show Timer
+                    Show Timers
                 </label>
 
                 <Checkbox 
@@ -58,14 +57,14 @@ export default function SettingsMenu() {
                 />
             </div>
 
-            {/* <div className="menu-item">
+            <div className="menu-item">
                 <Button
                     buttonStyle="secondary"
                     onClick={() => openMenu("manageTimers")}
                 >
                     Manage Timers
                 </Button>
-            </div> */}
+            </div>
         </Menu>
     );
 }

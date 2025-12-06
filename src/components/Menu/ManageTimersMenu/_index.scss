@@ -1,0 +1,45 @@
+.manage-timers-menu {
+    .menu-body {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .utc-input {
+            text-align: center;
+            padding: 0;
+            aspect-ratio: 1;
+            width: 4rem;
+        }
+
+        .timer-buttons {
+            display: flex;
+            align-self: flex-end;
+            gap: 1rem;
+        }
+    }
+
+    .add-timer-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+
+        .add-icon {
+            font-size: 1em;
+        }
+    }
+}

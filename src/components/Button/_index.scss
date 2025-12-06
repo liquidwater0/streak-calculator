@@ -31,6 +31,24 @@
         }
     }
 
+    &.success {
+        background-color: $color-green;
+        color: $color-white-100;
+
+        &:hover {
+            background-color: color.adjust($color-green, $alpha: -0.25);
+        }
+    }
+
+    &.danger {
+        background-color: $color-red;
+        color: $color-white-100;
+
+        &:hover {
+            background-color: color.adjust($color-red, $alpha: -0.25);
+        }
+    }
+
     &.floating {
         background-color: transparent;
         color: var(--theme-text-color);
