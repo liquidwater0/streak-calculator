@@ -41,7 +41,7 @@ export default function Menu({
                             buttonStyle="floating"
                             icon
                             className="close-button"
-                            onClick={closeAllMenus}
+                            onClick={() => closeAllMenus()}
                             aria-label="menu close button"
                         >
                             <Close />
