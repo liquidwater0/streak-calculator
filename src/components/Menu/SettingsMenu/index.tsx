@@ -30,7 +30,6 @@ export default function SettingsMenu() {
                         selected={theme === "dark"}
                         icon
                         onClick={() => setTheme("dark")}
-                        aria-pressed={theme === "dark"}
                         aria-label="dark mode button"
                     >
                         <DarkMode />
@@ -39,7 +38,6 @@ export default function SettingsMenu() {
                         selected={theme === "light"}
                         icon
                         onClick={() => setTheme("light")}
-                        aria-pressed={theme === "light"}
                         aria-label="light mode button"
                     >
                         <LightMode />

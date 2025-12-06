@@ -108,14 +108,12 @@ function App() {
 					<ButtonToggle.Button 
 						selected={mode === "streak"}
 						onClick={() => setMode("streak")}
-						aria-pressed={mode === "streak"}
 					>
 						Streak
 					</ButtonToggle.Button>
 					<ButtonToggle.Button 
 						selected={mode === "date"}
 						onClick={() => setMode("date")}
-						aria-pressed={mode === "date"}
 					>
 						Date
 					</ButtonToggle.Button>
@@ -153,6 +151,8 @@ function App() {
 								id="currentStreakInput"
 								className="calculation-input"
 								type="number"
+								required
+								aria-required
 								defaultValue={currentStreak}
 								onChange={event => {
 									const value = event.target.valueAsNumber;
@@ -173,6 +173,8 @@ function App() {
 									id="desiredStreakInput"
 									className="calculation-input"
 									type="number"
+									required={mode === "date"}
+									aria-required={mode === "date"}
 									defaultValue={desiredStreak}
 									onChange={event => {
 										const value = event.target.valueAsNumber;
@@ -196,6 +198,8 @@ function App() {
 										className="calculation-input"
 										type="number"
 										placeholder="MM"
+										required={mode === "streak"}
+										aria-required={mode === "streak"}
 										defaultValue={desiredDate.month}
 										onChange={event => {
 											setDesiredDate(current => {
@@ -208,6 +212,8 @@ function App() {
 										className="calculation-input"
 										type="number"
 										placeholder="DD"
+										required={mode === "streak"}
+										aria-required={mode === "streak"}
 										defaultValue={desiredDate.day}
 										onChange={event => {
 											setDesiredDate(current => {
@@ -220,6 +226,8 @@ function App() {
 										className="calculation-input"
 										type="number"
 										placeholder="YYYY"
+										required={mode === "streak"}
+										aria-required={mode === "streak"}
 										defaultValue={desiredDate.year}
 										onChange={event => {
 											setDesiredDate(current => {
@@ -241,7 +249,6 @@ function App() {
 									selected={hasClaimedStreakToday}
 									onClick={() => setHasClaimedStreakToday(true)}
 									type="button"
-									aria-pressed={hasClaimedStreakToday}
 								>
 									Yes
 								</ButtonToggle.Button>
@@ -249,7 +256,6 @@ function App() {
 									selected={!hasClaimedStreakToday}
 									onClick={() => setHasClaimedStreakToday(false)}
 									type="button"
-									aria-pressed={!hasClaimedStreakToday}
 								>
 									No
 								</ButtonToggle.Button>

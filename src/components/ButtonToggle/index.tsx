@@ -48,6 +48,7 @@ function ToggleButton({
             className={`${selected ? "selected" : ""} ${className}`}
             buttonStyle={(props as any).buttonStyle}
             icon={icon}
+            aria-pressed={selected}
             { ...props }
         >
             { children }
