@@ -1,6 +1,6 @@
 import "./scss/App.scss";
 import { useState, useEffect, Activity } from "react";
-import { addDays, subDays, differenceInDays } from "date-fns";
+import { addDays, subDays, differenceInDays, isToday } from "date-fns";
 import Button from "./components/Button";
 import ButtonToggle from "./components/ButtonToggle";
 import Input from "./components/Input";
@@ -37,6 +37,10 @@ function App() {
 
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
+
+		if (isToday(new Date(new Date().getFullYear(), 3, 1))) {
+			document.documentElement.dataset.funnies = "true";
+		}
 	}, [theme]);
 
 	const calculate = () => {

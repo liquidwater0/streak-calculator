@@ -1,0 +1,13 @@
+html[data-funnies="true"] {
+    rotate: 0.25deg;
+
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    *, *::before, *::after {
+        font-family: "Comic Sans MS", cursive !important;
+        border-radius: 0 !important;
+    }
+}
