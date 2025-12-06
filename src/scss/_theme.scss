@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "./colors" as *;
+
+html[data-theme="dark"] {
+    --theme-color-1: #{$color-blue-200};
+    --theme-color-2: #{$color-blue-300};
+    --theme-color-3: #{$color-blue-400};
+
+    --theme-text-color: #{$color-white-100};
+    
+    --timer-label-text-color: #{color.adjust($color-white-100, $alpha: -0.5)};
+    --results-background: #{color.adjust($color-blue-300, $alpha: -0.5)};
+    --input-background: #{$color-blue-100};
+}
+
+html[data-theme="light"] {
+    --theme-color-1: #{$color-white-100};
+    --theme-color-2: #{$color-white-200};
+    --theme-color-3: #{$color-white-300};
+
+    --theme-text-color: #{$color-blue-100};
+
+    --timer-label-text-color: #{color.adjust($color-blue-100, $alpha: -0.5)};
+    --results-background: #{color.adjust($color-white-200, $alpha: -0.5)};
+    --input-background: #{$color-white-300};
+}

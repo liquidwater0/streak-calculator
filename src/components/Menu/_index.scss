@@ -1,0 +1,51 @@
+.menu-backdrop {
+    position: fixed;
+    background-color: hsl(0 0% 0% / 0.5);
+    inset: 0;
+}
+
+.menu {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%; 
+    isolation: isolate;
+    background-color: var(--theme-color-2);
+    width: 35rem;
+    height: 50rem;
+    max-height: 75%;
+    border-radius: 1rem;
+    z-index: 100;
+
+    .menu-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        .menu-title {
+            font-size: 2rem;
+        }
+
+        .close-button {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    .menu-body {
+        overflow: auto;
+        padding: 2rem;
+    }
+
+    @media (width < 700px) {
+        width: 100%;
+    }
+
+    @media (height < 850px) {
+        height: 100%;
+        max-height: 100%;
+    }
+}

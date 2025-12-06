@@ -1,0 +1,25 @@
+.checkbox {
+    --size: 3.75rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--input-background);
+    color: var(--theme-text-color);
+    width: var(--size);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: var(--size);
+    border-radius: 0.15em;
+    aspect-ratio: 1;
+
+    :not(:checked) & > * {
+        display: none;
+        font-size: 1em !important;
+    }
+
+    :checked + & > * {
+        display: block;
+    }
+}

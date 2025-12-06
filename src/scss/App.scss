@@ -1,0 +1,233 @@
+@use "./font" as *;
+@use "./colors" as *;
+@use "./theme" as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--theme-color-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-yellow;
+    border-radius: 1000rem;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+body {
+    background-color: var(--theme-color-1);
+    color: var(--theme-text-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--theme-color-2);
+    padding: 1.5rem 2.5rem;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        margin-right: auto;
+        user-select: none;
+    }
+
+    .settings-button {
+        margin-left: 1.25rem;
+    }
+
+    @media (width < 850px) {
+        .title span {
+            display: none;
+        }
+    }
+
+    @media (width < 520px) {
+        display: grid;
+        grid-template-areas: 
+            "title settings"
+            "mode mode";
+        
+        .title {
+            grid-area: title;
+        }
+
+        .mode-buttons {
+            grid-area: mode;
+            place-self: center;
+        }
+
+        .settings-button {
+            grid-area: settings;
+            margin: 0;
+            place-self: end;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    overflow: auto;
+
+    @media (width < 650px) {
+        flex-direction: column;
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    @media (height < 900px) {
+        padding-bottom: 6rem;
+    }
+}
+
+.calculations-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--results-background);
+    border-radius: 1rem;
+
+    .calculation-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: var(--theme-color-2);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .calculation-results {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .calculation-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        .calculation-item-label {
+            font-size: 1.25rem;
+        }
+
+        .date-inputs {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(3, 4.5em);
+
+            .calculation-input {
+                text-align: center;
+                padding: 0;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    .result-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .result-item-label {
+            font-size: 1.25rem;
+        }
+
+        .result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color-yellow;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (width < 850px) {
+        &.calculations-container {
+            width: 100%;
+            border-radius: 0;
+
+            .calculation-inputs {
+                border-radius: 0 1rem 1rem 0;
+            }
+        }
+    }
+
+    @media (width < 650px) {
+        &.calculations-container {
+            display: flex;
+            flex-direction: column;
+
+            .calculation-inputs {
+                border-radius: 0 0 1rem 1rem;
+            }
+
+            .calculation-results {
+                padding: 1.5rem;
+                gap: 3rem;
+            }
+        }
+    }
+}
+
+.button-bar {
+    @media (height < 900px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: var(--theme-color-2);
+        width: 100%;
+        padding: 1rem;
+        bottom: 0;
+        z-index: 1;
+    }
+}
+
+.fire-icon {
+    color: $color-yellow;
+    font-size: 1em !important;
+}
+
+.hidden {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}

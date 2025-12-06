@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "../../scss/colors" as *;
+
+.button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    letter-spacing: 0.025em;
+    transition: background-color 200ms;
+
+    &.primary {
+        background-color: $color-yellow;
+        color: $color-blue-100;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: color.adjust($color-yellow, $alpha: -0.25);
+        }
+    }
+
+    &.secondary {
+        background-color: $color-blue-400;
+        color: $color-white-100;
+
+        &:hover {
+            background-color: color.adjust($color-blue-400, $alpha: -0.25);
+        }
+    }
+
+    &.floating {
+        background-color: transparent;
+        color: var(--theme-text-color);
+        
+        &:hover {
+            background-color: color.adjust($color-white-100, $alpha: -0.75);
+        }
+    }
+
+    &.icon-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25em;
+        font-size: 2.5rem;
+        aspect-ratio: 1;
+
+        & > * {
+            font-size: 1em !important;
+        }
+    }
+
+    &:focus-visible {
+        outline: 0.25rem dashed var(--theme-text-color);
+    }
+}

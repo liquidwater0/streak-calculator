@@ -1,0 +1,30 @@
+@use "../../scss/colors" as *;
+
+.timer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--theme-color-2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    user-select: none;
+    overflow: hidden;
+    min-width: 12rem;
+
+    .timer-label {
+        color: var(--timer-label-text-color);
+        font-size: 1rem;
+    }
+
+    .progress-bar {
+        position: absolute;
+        background-color: $color-yellow;
+        height: 0.15em;
+        left: 0;
+        bottom: 0;
+    }
+}

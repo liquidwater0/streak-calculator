@@ -1,0 +1,16 @@
+@use "sass:color";
+@use "../../scss/colors" as *;
+
+.button-toggle {
+    display: flex;
+    gap: 1.5rem;
+
+    .primary:not(.selected) {
+        background-color: color.adjust($color-yellow, $alpha: -0.75);
+    }
+
+    .secondary.selected {
+        outline: 0.2rem solid $color-yellow;
+        color: $color-yellow;
+    }
+}
