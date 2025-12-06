@@ -52,7 +52,7 @@ function App() {
 		const calculateStartedDate = () => {
 			if (!currentStreakInputed) return;
 
-			const startDate = subDays(now, currentStreak);
+			const startDate = subDays(now, currentStreak + (hasClaimedStreakToday ? 0 : 1));
 			const startMonth = startDate.getMonth();
 			const startDay = startDate.getDate();
 			const startYear = startDate.getFullYear();
