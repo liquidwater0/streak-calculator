@@ -60,6 +60,8 @@ function TimerInputFields({ timerData }: TimerInputFieldsProps) {
     }
 
     const finishEditing = () => {
+        if (!data.utcOffset) return;
+        
         setIsEditing(false);
         editTimer(data.id, data);
     }
