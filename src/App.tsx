@@ -57,7 +57,7 @@ function App() {
 			const startDay = startDate.getDate();
 			const startYear = startDate.getFullYear();
 
-			setStartedOn(`${MONTHS[startMonth]} ${startDay}, ${startYear}`);
+			setStartedOn(`${MONTHS[startMonth]} ${startDay}, ${Math.abs(startYear)} ${startYear < 0 ? "BC" : ""}`);
 		}
 
 		if (mode === "date" && anyDateModeValueEmpty) {
@@ -78,7 +78,7 @@ function App() {
 			const expectedDay = expectedDate.getDate();
 			const expectedYear = expectedDate.getFullYear();
 
-			setExpectedOn(`${MONTHS[expectedMonth]} ${expectedDay}, ${expectedYear}`);
+			setExpectedOn(`${MONTHS[expectedMonth]} ${expectedDay}, ${Math.abs(expectedYear)} ${expectedYear < 0 ? "BC" : ""}`);
 		}
 
 		if (mode === "streak" && !anyStreakModeValueEmpty) {
