@@ -147,6 +147,7 @@ function App() {
 								type="number"
 								required
 								aria-required
+								invalidMessage="Please Enter Current Streak"
 								defaultValue={currentStreak}
 								onChange={event => {
 									const value = event.target.valueAsNumber;
@@ -169,6 +170,7 @@ function App() {
 									type="number"
 									required={mode === "date"}
 									aria-required={mode === "date"}
+									invalidMessage="Please Enter Desired Streak"
 									defaultValue={desiredStreak}
 									onChange={event => {
 										const value = event.target.valueAsNumber;
@@ -194,6 +196,7 @@ function App() {
 										placeholder="MM"
 										required={mode === "streak"}
 										aria-required={mode === "streak"}
+										invalidMessage="Month Required"
 										defaultValue={desiredDate.month}
 										onChange={event => {
 											setDesiredDate(current => {
@@ -208,6 +211,7 @@ function App() {
 										placeholder="DD"
 										required={mode === "streak"}
 										aria-required={mode === "streak"}
+										invalidMessage="Day Required"
 										defaultValue={desiredDate.day}
 										onChange={event => {
 											setDesiredDate(current => {
@@ -222,6 +226,7 @@ function App() {
 										placeholder="YYYY"
 										required={mode === "streak"}
 										aria-required={mode === "streak"}
+										invalidMessage="Year Required"
 										defaultValue={desiredDate.year}
 										onChange={event => {
 											setDesiredDate(current => {

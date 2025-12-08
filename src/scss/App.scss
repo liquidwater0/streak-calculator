@@ -149,6 +149,7 @@ footer {
         .date-inputs {
             display: grid;
             justify-content: space-between;
+            align-items: end;
             grid-template-columns: repeat(3, 4.5em);
 
             .calculation-input {

@@ -79,6 +79,9 @@ function TimerInputFields({ timerData }: TimerInputFieldsProps) {
                     className="utc-input"
                     readOnly={!isEditing}
                     defaultValue={!isNaN(data.utcOffset) ? data.utcOffset : ""}
+                    required
+                    aria-required="true"
+                    invalidMessage="UTC Required"
                     placeholder="UTC"
                     onChange={event => setData(prevData => ({ ...prevData, utcOffset: event.target.valueAsNumber }))}
                 />
