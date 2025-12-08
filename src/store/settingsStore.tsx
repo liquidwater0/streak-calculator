@@ -15,15 +15,9 @@ interface SettingsStore {
     toggleShowTimers: () => void
 }
 
-function storageValueToBoolean(value: string | null) {
-    if (value === "true") return true;
-    if (value === "false") return false;
-    return null;
-}
-
 export const useSettings = create<SettingsStore>(set => ({
     theme: localStorage.getItem(THEME_STORAGE_KEY) as ThemeType || DEFAULT_THEME,
-    showTimers: storageValueToBoolean(localStorage.getItem(SHOW_TIMERS_STORAGE_KEY)) ?? DEFAULT_SHOW_TIMERS,
+    showTimers: JSON.parse(localStorage.getItem(SHOW_TIMERS_STORAGE_KEY)!) ?? DEFAULT_SHOW_TIMERS,
     setTheme: (theme: ThemeType) => set(state => {
         localStorage.setItem(THEME_STORAGE_KEY, theme);
         return { ...state, theme };
