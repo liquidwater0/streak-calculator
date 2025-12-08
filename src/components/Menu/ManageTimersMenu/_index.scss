@@ -46,4 +46,24 @@
             font-size: 1em;
         }
     }
+
+    @media (width < 550px) {
+        .menu-item {
+            flex-direction: column;
+            justify-content: center;
+            align-items: unset;
+            gap: 1rem;
+
+            .utc-input {
+                width: 100%;
+                aspect-ratio: unset;
+                padding: 1em 1.25em;
+            }
+
+            .timer-buttons {
+                justify-content: center;
+                align-self: unset;
+            }
+        }
+    }
 }
