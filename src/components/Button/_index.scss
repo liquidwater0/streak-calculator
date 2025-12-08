@@ -2,6 +2,7 @@
 @use "../../scss/colors" as *;
 
 .button {
+    position: relative;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.5em 1em;
@@ -11,11 +12,25 @@
     cursor: pointer;
     letter-spacing: 0.025em;
     transition: background-color 200ms;
+    overflow: hidden;
+
+    .ripple {
+        position: absolute;
+        width: 1em;
+        user-select: none;
+        border-radius: 1000rem;
+        aspect-ratio: 1;
+        animation: ripple 750ms forwards;
+    }
 
     &.primary {
         background-color: $color-yellow;
         color: $color-blue-100;
         text-transform: uppercase;
+
+        .ripple {
+            background-color: hsl(from $color-yellow h s l / 0.5);
+        }
 
         &:hover {
             background-color: color.adjust($color-yellow, $alpha: -0.25);
@@ -26,6 +41,10 @@
         background-color: $color-blue-400;
         color: $color-white-100;
 
+        .ripple {
+            background-color: hsl(from $color-blue-400 h s l / 0.5);
+        }
+
         &:hover {
             background-color: color.adjust($color-blue-400, $alpha: -0.25);
         }
@@ -34,6 +53,10 @@
     &.success {
         background-color: $color-green;
         color: $color-white-100;
+
+        .ripple {
+            background-color: hsl(from $color-green h s l / 0.5);
+        }
 
         &:hover {
             background-color: color.adjust($color-green, $alpha: -0.25);
@@ -44,6 +67,10 @@
         background-color: $color-red;
         color: $color-white-100;
 
+        .ripple {
+            background-color: hsl(from $color-red h s l / 0.5);
+        }
+
         &:hover {
             background-color: color.adjust($color-red, $alpha: -0.25);
         }
@@ -52,6 +79,10 @@
     &.floating {
         background-color: transparent;
         color: var(--theme-text-color);
+
+        .ripple {
+            background-color: hsl(from var(--theme-text-color) h s l / 0.5);
+        }
         
         &:hover {
             background-color: color.adjust($color-white-100, $alpha: -0.75);
@@ -73,5 +104,21 @@
 
     &:focus-visible {
         outline: 0.25rem dashed var(--theme-text-color);
+    }
+}
+
+@keyframes ripple {
+    from {
+        scale: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    to {
+        scale: 10;
+        opacity: 0;
     }
 }
