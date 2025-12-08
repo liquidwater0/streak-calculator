@@ -22,4 +22,8 @@
     :checked + & > * {
         display: block;
     }
+
+    &:focus-visible {
+        outline: 0.25rem dashed var(--theme-text-color);
+    }
 }

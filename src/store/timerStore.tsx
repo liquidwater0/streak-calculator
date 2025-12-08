@@ -17,7 +17,7 @@ interface TimerStore {
 const initialTimer = { id: crypto.randomUUID(), utcOffset: 0, label: "" };
 
 export const useTimers = create<TimerStore>(set => ({
-    timers: JSON.parse(localStorage.getItem(TIMERS_STORAGE_KEY) || JSON.stringify([initialTimer])),
+    timers: JSON.parse(localStorage.getItem(TIMERS_STORAGE_KEY)!) || [initialTimer],
     addTimer: (timerData: Timer) => set(state => {
         const newTimers = [
             ...state.timers,
