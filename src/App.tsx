@@ -1,6 +1,6 @@
 import "./scss/App.scss";
 import { useState, useEffect, Activity } from "react";
-import { addDays, subDays, differenceInDays, isToday } from "date-fns";
+import { addDays, subDays, differenceInDays, isToday, format } from "date-fns";
 import Button from "./components/Button";
 import ButtonToggle from "./components/ButtonToggle";
 import Input from "./components/Input";
@@ -58,7 +58,7 @@ function App() {
 
 			const startDate = subDays(now, currentStreak + (hasClaimedStreakToday ? 0 : 1));
 			const startMonth = startDate.getMonth();
-			const startDay = startDate.getDate();
+			const startDay = format(startDate, "do");
 			const startYear = startDate.getFullYear();
 
 			setStartedOn(`${MONTHS[startMonth]} ${startDay}, ${Math.abs(startYear)} ${startYear < 0 ? "BC" : ""}`);
@@ -69,7 +69,7 @@ function App() {
 
 			const expectedDate = addDays(now, (desiredStreak - currentStreak) - (hasClaimedStreakToday ? 0 : 1));
 			const expectedMonth = expectedDate.getMonth();
-			const expectedDay = expectedDate.getDate();
+			const expectedDay = format(expectedDate, "do");
 			const expectedYear = expectedDate.getFullYear();
 
 			setExpectedOn(`${MONTHS[expectedMonth]} ${expectedDay}, ${Math.abs(expectedYear)} ${expectedYear < 0 ? "BC" : ""}`);
