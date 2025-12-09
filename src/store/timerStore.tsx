@@ -21,7 +21,7 @@ export const useTimers = create<TimerStore>(set => ({
     addTimer: (timerData: Timer) => set(state => {
         const newTimers = [
             ...state.timers,
-            { ...timerData }
+            timerData
         ];
 
         localStorage.setItem(TIMERS_STORAGE_KEY, JSON.stringify(newTimers));
