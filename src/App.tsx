@@ -1,11 +1,12 @@
 import "./scss/App.scss";
 import { useState, useEffect, Activity } from "react";
-import { addDays, subDays, differenceInDays, isToday, format } from "date-fns";
+import { addDays, subDays, differenceInDays, format } from "date-fns";
 import Button from "./components/Button";
 import ButtonToggle from "./components/ButtonToggle";
 import Input from "./components/Input";
 import Timer from "./components/Timer";
 import AllMenus from "./components/Menu/AllMenus";
+import SeriousStuff from "./components/SeriousStuff";
 import { Whatshot, Settings } from "@mui/icons-material";
 import { useMenus } from "./store/menuStore";
 import { useSettings } from "./store/settingsStore";
@@ -37,10 +38,6 @@ function App() {
 
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
-
-		if (isToday(new Date(new Date().getFullYear(), 3, 1))) {
-			document.documentElement.dataset.funnies = "true";
-		}
 	}, [theme]);
 
 	const calculate = () => {
@@ -88,6 +85,7 @@ function App() {
 	return (
 		<>
 			<AllMenus />
+			<SeriousStuff />
 
 			<header className="header">
 				<h1 className="title">
