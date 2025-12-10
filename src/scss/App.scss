@@ -32,6 +32,11 @@ html, body, #root {
     grid-template-rows: max-content 1fr max-content;
 }
 
+#portal {
+    position: fixed;
+    z-index: 1000;
+}
+
 body {
     background-color: var(--theme-color-1);
     color: var(--theme-text-color);
