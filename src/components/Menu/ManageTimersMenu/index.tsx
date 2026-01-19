@@ -1,10 +1,10 @@
 import "./_index.scss";
 import { useState, useId, Activity } from "react";
 import Menu from "..";
-import { useMenus } from "../../../store/menuStore";
-import { useTimers, type Timer } from "../../../store/timerStore"; 
-import Input from "../../Input";
-import Button from "../../Button";
+import { useMenus } from "@store/menuStore";
+import { useTimers, type Timer } from "@store/timerStore"; 
+import Input from "@components/Input";
+import Button from "@components/Button";
 import { Edit, Check, Delete, Add } from "@mui/icons-material";
 
 interface TimerInputFieldsProps {

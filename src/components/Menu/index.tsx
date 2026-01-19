@@ -2,8 +2,8 @@ import "./_index.scss";
 import { createPortal } from "react-dom";
 import { Activity, type HTMLAttributes } from "react";
 import { Close } from "@mui/icons-material";
-import Button from "../Button";
-import { useMenus } from "../../store/menuStore";
+import Button from "@components/Button";
+import { useMenus } from "@store/menuStore";
 
 interface MenuProps extends HTMLAttributes<HTMLDivElement> {
     title: string,

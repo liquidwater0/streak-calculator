@@ -1,10 +1,10 @@
 import "./_index.scss";
 import Menu from "..";
-import { useMenus } from "../../../store/menuStore";
-import { useSettings } from "../../../store/settingsStore";
-import Button from "../../Button";
-import ButtonToggle from "../../ButtonToggle";
-import Checkbox from "../../Checkbox";
+import { useMenus } from "@store/menuStore";
+import { useSettings } from "@store/settingsStore";
+import Button from "@components/Button";
+import ButtonToggle from "@components/ButtonToggle";
+import Checkbox from "@components/Checkbox";
 import { DarkMode, LightMode } from "@mui/icons-material";
 
 export default function SettingsMenu() {
