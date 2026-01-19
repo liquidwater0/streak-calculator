@@ -6,11 +6,11 @@ import ButtonToggle from "@components/ButtonToggle";
 import Input from "@components/Input";
 import Timer from "@components/Timer";
 import AllMenus from "@components/Menu/AllMenus";
-import SeriousStuff from "@components/SeriousStuff";
 import { Whatshot, Settings } from "@mui/icons-material";
 import { useMenus } from "@store/menuStore";
 import { useSettings } from "@store/settingsStore";
 import { useTimers } from "@store/timerStore";
+import useFunny from "./hooks/useFunny";
 import { DEFAULT_MODE } from "./constants";
 
 type DesiredDate = { 
@@ -20,6 +20,8 @@ type DesiredDate = {
 };
 
 function App() {
+	useFunny();
+
 	const openMenu = useMenus(state => state.openMenu);
 	const theme = useSettings(state => state.theme);
 	const showTimers = useSettings(state => state.showTimers);
@@ -85,7 +87,6 @@ function App() {
 	return (
 		<>
 			<AllMenus />
-			<SeriousStuff />
 
 			<header className="header">
 				<h1 className="title">

@@ -14,6 +14,7 @@
       "@scss/*": ["src/scss/*"],
       "@components/*": ["src/components/*"],
       "@store/*": ["src/store/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
 
     /* Bundler mode */
