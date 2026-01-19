@@ -4,15 +4,13 @@ import { isToday } from 'date-fns';
 
 export default function SeriousStuff() {
     const isSeriousDay = isToday(new Date(new Date().getFullYear(), 3, 1));
+    const testing = false;
 
     useEffect(() => {
-        if (isSeriousDay) {
+        if (isSeriousDay || testing) {
             document.documentElement.dataset.serious = "true";
         }
     }, []);
 
-    return isSeriousDay && (
-        <>
-        </>
-    );
+    return isSeriousDay && <></>;
 }
