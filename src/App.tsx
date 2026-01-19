@@ -1,16 +1,16 @@
 import "./scss/App.scss";
 import { useState, useEffect, Activity } from "react";
 import { addDays, subDays, differenceInDays, format } from "date-fns";
-import Button from "./components/Button";
-import ButtonToggle from "./components/ButtonToggle";
-import Input from "./components/Input";
-import Timer from "./components/Timer";
-import AllMenus from "./components/Menu/AllMenus";
-import SeriousStuff from "./components/SeriousStuff";
+import Button from "@components/Button";
+import ButtonToggle from "@components/ButtonToggle";
+import Input from "@components/Input";
+import Timer from "@components/Timer";
+import AllMenus from "@components/Menu/AllMenus";
+import SeriousStuff from "@components/SeriousStuff";
 import { Whatshot, Settings } from "@mui/icons-material";
-import { useMenus } from "./store/menuStore";
-import { useSettings } from "./store/settingsStore";
-import { useTimers } from "./store/timerStore";
+import { useMenus } from "@store/menuStore";
+import { useSettings } from "@store/settingsStore";
+import { useTimers } from "@store/timerStore";
 import { DEFAULT_MODE } from "./constants";
 
 type DesiredDate = { 

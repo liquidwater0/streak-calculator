@@ -1,5 +1,5 @@
 import "./_index.scss";
-import Button from "../Button";
+import Button from "@components/Button";
 import { cloneElement, Children, isValidElement } from "react";
 import type { HTMLAttributes, ButtonHTMLAttributes } from "react";
 
