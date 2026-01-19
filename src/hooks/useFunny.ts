@@ -4,7 +4,7 @@ import { isToday } from "date-fns";
 export default function useFunny() {
     useEffect(() => {
         const html = document.documentElement;
-        const testing = false;
+        const testing = true;
         const isSeriousDay = isToday(new Date(new Date().getFullYear(), 3, 1)) || testing;
 
         if (!isSeriousDay) return;

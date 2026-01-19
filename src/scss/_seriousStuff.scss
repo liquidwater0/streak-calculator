@@ -1,5 +1,6 @@
 html[data-serious="true"] {
     rotate: 0.25deg;
+    filter: hue-rotate(180deg);
 
     ::-webkit-scrollbar {
         width: 0 !important;
