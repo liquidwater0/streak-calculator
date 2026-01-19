@@ -11,6 +11,4 @@ export default function SeriousStuff() {
             document.documentElement.dataset.serious = "true";
         }
     }, []);
-
-    return isSeriousDay && <></>;
 }
