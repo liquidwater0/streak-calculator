@@ -1,6 +1,5 @@
 import "./_index.scss";
-import { useState } from "react";
-import type { ButtonHTMLAttributes } from "react";
+import { useState, type ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	buttonStyle: "primary" | "secondary" | "success" | "danger" | "floating",

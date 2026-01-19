@@ -1,6 +1,5 @@
 import "./_index.scss";
-import { useEffect, useRef, useState } from "react";
-import type { HTMLAttributes } from "react";
+import { useEffect, useRef, useState, type HTMLAttributes } from "react";
 
 const SECOND_MS = 1000;
 const MINUTE_MS = 60 * SECOND_MS;

@@ -1,7 +1,6 @@
 import "./_index.scss";
 import { createPortal } from "react-dom";
-import { Activity } from "react";
-import type { HTMLAttributes } from "react";
+import { Activity, type HTMLAttributes } from "react";
 import { Close } from "@mui/icons-material";
 import Button from "../Button";
 import { useMenus } from "../../store/menuStore";

@@ -1,6 +1,5 @@
 import "./_index.scss";
-import { useState, Activity } from "react";
-import type { InputHTMLAttributes } from "react";
+import { useState, Activity, type InputHTMLAttributes } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     invalidMessage?: string

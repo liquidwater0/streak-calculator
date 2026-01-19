@@ -1,7 +1,12 @@
 import "./_index.scss";
 import Button from "@components/Button";
-import { cloneElement, Children, isValidElement } from "react";
-import type { HTMLAttributes, ButtonHTMLAttributes } from "react";
+import { 
+    cloneElement, 
+    Children, 
+    isValidElement,
+    type HTMLAttributes, 
+    type ButtonHTMLAttributes
+} from "react";
 
 interface ButtonToggleProps extends HTMLAttributes<HTMLDivElement> {
     buttonStyle: "primary" | "secondary"

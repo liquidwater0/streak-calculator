@@ -1,6 +1,5 @@
 import "./_index.scss";
-import { useRef } from "react";
-import type { HTMLAttributes } from "react";
+import { useRef, type HTMLAttributes } from "react";
 import { Check } from "@mui/icons-material";
 
 interface CheckboxProps extends HTMLAttributes<HTMLInputElement> {}
