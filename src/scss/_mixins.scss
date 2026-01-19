@@ -1,0 +1,10 @@
+@mixin button-hover($color) {
+    &:hover,
+    &:focus-visible {
+        background-color: hsl(from $color h s 35%);
+    }
+
+    &:active {
+        background-color: hsl(from $color h s 30%);
+    }
+}

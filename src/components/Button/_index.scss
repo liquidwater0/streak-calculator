@@ -1,7 +1,12 @@
-@use "sass:color";
-
 .button {
+    --background-color: black;
+    --text-color: white;
+    
+    @include button-hover(var(--background-color));
+
     position: relative;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.5em 1em;
@@ -15,6 +20,7 @@
 
     .ripple {
         position: absolute;
+        background-color: hsl(from var(--background-color) h s l / 0.5);
         width: 1em;
         user-select: none;
         border-radius: 1000rem;
@@ -23,68 +29,35 @@
     }
 
     &.primary {
-        background-color: $color-yellow;
-        color: $color-blue-100;
+        --background-color: #{$color-yellow};
+        --text-color: #{$color-blue-100};
+
         text-transform: uppercase;
-
-        .ripple {
-            background-color: hsl(from $color-yellow h s l / 0.5);
-        }
-
-        &:hover {
-            background-color: color.adjust($color-yellow, $alpha: -0.25);
-        }
     }
 
     &.secondary {
-        background-color: $color-blue-400;
-        color: $color-white-100;
-
-        .ripple {
-            background-color: hsl(from $color-blue-400 h s l / 0.5);
-        }
-
-        &:hover {
-            background-color: color.adjust($color-blue-400, $alpha: -0.25);
-        }
+        --background-color: #{$color-blue-400};
+        --text-color: #{$color-white-100};
     }
 
     &.success {
-        background-color: $color-green;
-        color: $color-white-100;
-
-        .ripple {
-            background-color: hsl(from $color-green h s l / 0.5);
-        }
-
-        &:hover {
-            background-color: color.adjust($color-green, $alpha: -0.25);
-        }
+        --background-color: #{$color-green};
+        --text-color: #{$color-white-100};
     }
 
     &.danger {
-        background-color: $color-red;
-        color: $color-white-100;
-
-        .ripple {
-            background-color: hsl(from $color-red h s l / 0.5);
-        }
-
-        &:hover {
-            background-color: color.adjust($color-red, $alpha: -0.25);
-        }
+        --background-color: #{$color-red};
+        --text-color: #{$color-white-100};
     }
 
     &.floating {
-        background-color: transparent;
-        color: var(--theme-text-color);
+        @include button-hover(hsl(from $color-white-100 h s l / 0.5));
+
+        --background-color: transparent;
+        --text-color: var(--theme-text-color);
 
         .ripple {
             background-color: hsl(from var(--theme-text-color) h s l / 0.5);
-        }
-        
-        &:hover {
-            background-color: color.adjust($color-white-100, $alpha: -0.75);
         }
     }
 
@@ -99,10 +72,6 @@
         & > * {
             font-size: 1em !important;
         }
-    }
-
-    &:focus-visible {
-        outline: 0.25rem dashed var(--theme-text-color);
     }
 }
 

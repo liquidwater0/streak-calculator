@@ -1,11 +1,9 @@
-@use "sass:color";
-
 .button-toggle {
     display: flex;
     gap: 1.5rem;
 
     .primary:not(.selected) {
-        background-color: color.adjust($color-yellow, $alpha: -0.75);
+        background-color: hsl(from $color-yellow h s l / 0.25);
     }
 
     .secondary.selected {

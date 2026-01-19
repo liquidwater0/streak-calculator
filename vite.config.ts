@@ -23,6 +23,7 @@ export default defineConfig({
       scss: {
         additionalData: `
           @use "@scss/_colors.scss" as *;
+          @use "@scss/_mixins.scss" as *;
           @use "@scss/_font.scss" as *;
           @use "@scss/_theme.scss" as *;
         `
