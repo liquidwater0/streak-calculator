@@ -1,4 +1,4 @@
-import "./scss/App.scss";
+import "@scss/App.scss";
 import { useState, useEffect, Activity } from "react";
 import { addDays, subDays, differenceInDays, format } from "date-fns";
 import Button from "@components/Button";
