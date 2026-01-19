@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "./colors" as *;
+@use "@scss/_colors.scss" as *;
 
 html[data-theme="dark"] {
     --theme-color-1: #{$color-blue-200};
