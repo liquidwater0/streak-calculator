@@ -10,7 +10,7 @@ import { Whatshot, Settings } from "@mui/icons-material";
 import { useMenus } from "@store/menuStore";
 import { useSettings } from "@store/settingsStore";
 import { useTimers } from "@store/timerStore";
-import useFunny from "./hooks/useFunny";
+import useFunny from "@hooks/useFunny";
 import { DEFAULT_MODE } from "./constants";
 
 type DesiredDate = { 
